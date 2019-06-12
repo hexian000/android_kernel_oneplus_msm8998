@@ -53,6 +53,9 @@ AS		+= -EL
 LD		+= -EL
 endif
 
+# Tune for Qualcomm Snapdragon 835
+KBUILD_CFLAGS += -mcpu=cortex-a73.cortex-a53+crc+aes+sha2
+
 CHECKFLAGS	+= -D__aarch64__
 
 ifeq ($(CONFIG_ARM64_MODULE_CMODEL_LARGE), y)
