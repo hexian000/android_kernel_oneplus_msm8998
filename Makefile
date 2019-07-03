@@ -650,23 +650,14 @@ ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os
 else
 ifdef CONFIG_PROFILE_ALL_BRANCHES
-KBUILD_CFLAGS	+= -O2
+KBUILD_CFLAGS	+= -O3
 else
-KBUILD_CFLAGS   += -O2
+KBUILD_CFLAGS   += -O3
 endif
 endif
 
 # Tell gcc to never replace conditional load with a non-conditional one
 KBUILD_CFLAGS	+= $(call cc-option,--param=allow-store-data-races=0)
-
-# Optimize yet more
-KBUILD_CFLAGS += $(call cc-option,-ftree-vectorize)
-KBUILD_CFLAGS += $(call cc-option,-fvect-cost-model=unlimited)
-KBUILD_CFLAGS += $(call cc-option,-fgcse-after-reload)
-KBUILD_CFLAGS += $(call cc-option,-funswitch-loops)
-KBUILD_CFLAGS += $(call cc-option,-floop-interchange)
-KBUILD_CFLAGS += $(call cc-option,-fgraphite-identity)
-KBUILD_CFLAGS += $(call cc-option,-fpredictive-commoning)
 
 # Needed to unbreak GCC 7.x and above
 KBUILD_CFLAGS += $(call cc-option,-fno-store-merging)
