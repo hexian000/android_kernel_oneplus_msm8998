@@ -54,7 +54,7 @@ LD		+= -EL
 endif
 
 # Tune for Qualcomm Snapdragon 835
-KBUILD_CFLAGS += -mcpu=cortex-a73.cortex-a53+crc+aes+sha2
+KBUILD_CFLAGS += -mcpu=cortex-a73.cortex-a53+crypto
 
 CHECKFLAGS	+= -D__aarch64__
 
