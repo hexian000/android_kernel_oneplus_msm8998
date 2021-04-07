@@ -43,7 +43,7 @@ static u32 backlight = 0;
 static const u32 pcc_depth[9] = {128,256,512,1024,2048,4096,8192,16384,32768};
 static u32 depth = 8;
 static bool pcc_enabled = false;
-static bool mdss_backlight_enable = false;
+static bool mdss_backlight_enable = true;
 
 #ifdef RET_WORKGROUND
 static struct delayed_work back_to_backlight_work,back_to_pcc_work;
